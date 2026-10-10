@@ -1,0 +1,38 @@
+Build a complete, modern, responsive Agentic AI TravelTech web application called **RoamGuard AI — Your Intelligent Travel Companion**. Build a working application, not just a UI prototype. Use free tools and services wherever possible, and ensure the app works in demo mode without paid APIs.
+
+**1. Core Interface and Design**
+Create a professional, premium travel dashboard with a clean navy-blue and white theme, smooth animations, responsive layouts, itinerary cards, an interactive map area, a conversational AI chat interface, a journey status panel, and real-time-style alerts. Make all buttons and controls functional.
+
+**2. Intelligent Traveler Message Understanding**
+Allow travelers to describe their requirements naturally, for example: “I need to travel from Visakhapatnam to Hyderabad tomorrow, arrive before 9 AM, stay within ₹2,000, and prefer trains.” Use an AI model to extract origin, destination, date, arrival deadline, passenger count, budget, preferred transport, comfort preferences, and accessibility needs. Ask relevant follow-up questions when information is missing. Display the extracted details for confirmation.
+
+**3. Agentic Travel Planning**
+Generate and compare up to three feasible travel itineraries using available transport data. Display departure and arrival times, journey duration, estimated fare, transfer time, route, and uncertainty. Rank options based on budget, deadline, comfort, and user preferences. Never claim that simulated schedules, fares, bookings, or availability are live or verified.
+
+**4. Journey Monitoring and Disruption Recovery**
+Create an intelligent recovery agent that can handle train delays, cancellations, missed connections, and unavailable last-mile transport. Monitor journey status when supported by connected data sources and simulate disruptions in demo mode. When a disruption occurs, automatically update the journey state, recalculate the expected arrival time, evaluate alternative routes, check transfer feasibility and remaining budget, and rank recovery options. Clearly compare the original and revised itineraries, additional cost, time saved or lost, and deadline impact. Explain why the recommended alternative is best. If no feasible alternative exists, explain the limitation and suggest next steps.
+
+**5. Human Approval and Safe Actions**
+The agent may analyze and recommend alternatives automatically, but must request user approval before booking, cancelling, paying, or making any external commitment. Never claim to have completed an action unless a connected service confirms it. Provide a journey event log showing disruptions, decisions, recommendations, approvals, and outcomes.
+
+**6. Voice and Multilingual Accessibility**
+Add microphone-based speech input, text input, optional spoken responses, and multilingual interaction supporting English and Telugu where the available browser or speech services permit. Provide language selection, readable responses, clear microphone permission handling, and text fallback. Design the interaction to support travelers with accessibility needs.
+
+**7. AI Integration**
+Integrate Google Gemini through a secure backend using an environment variable for the API key. Never expose API keys in frontend code. If the API key is unavailable or the free quota is exceeded, fall back gracefully to a working mock AI mode. Separate AI reasoning, itinerary calculations, disruption handling, and UI components into maintainable modules. Use structured JSON outputs and validate model responses before executing actions.
+
+**8. Data and Backend**
+Use a simple backend and database architecture. If Supabase is available, use its free-tier services for saved itineraries, traveler preferences, journey status, and event history. Implement appropriate authentication and database access controls if accounts are added. If backend configuration is unavailable, use local demo data so the main application remains functional.
+
+**9. Demo Data and Testing**
+Include realistic but clearly labeled simulated transport schedules, fares, delays, cancellations, alternative routes, and last-mile transport scenarios. Provide buttons such as “Simulate Train Delay,” “Simulate Cancellation,” “Missed Connection,” and “Find Alternative.” Ensure each scenario triggers the actual recovery workflow and updates the UI. Add sample journeys and test cases for budget limits, arrival deadlines, missing information, infeasible transfers, and no available alternatives.
+
+**10. Technical Quality**
+Use React and Tailwind CSS if supported by the platform. Organize the code cleanly, handle loading and error states, validate inputs, and make the application mobile-friendly. Use free map or routing options only when available; otherwise show a clear route visualization without pretending it is live navigation. Avoid unnecessary paid dependencies.
+
+**11. Final Deliverables**
+Build the entire application, connect its features, run it, fix compilation errors, and test the main user flows. Provide a working preview, explain how to run the project, identify any API keys or environment variables required, and document which features use real integrations versus simulated demo data.
+
+**Important:** Prioritize a complete working end-to-end demo over adding many incomplete features. The main demonstration must show this flow: traveler enters a natural-language request → AI extracts requirements → system generates and compares itineraries → a disruption occurs → the agent recalculates and recommends alternatives → traveler approves a recovery option → the journey status and event log update.
+
+Do not stop after generating a plan or static interface. Implement the features, verify what works, and clearly report anything that remains incomplete.
