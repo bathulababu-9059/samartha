@@ -1,0 +1,30 @@
+Upgrade my existing RoamGuard AI Agentic TravelTech project. Preserve all existing working features and implement the following requirements as essential features.
+
+### 1. Premium, attractive UI
+Create a polished, production-style travel-tech interface with a premium navy, white and teal color palette, beautiful typography, subtle animations, clean spacing, responsive layouts and accessible contrast. Include a modern travel dashboard, an intuitive journey timeline, itinerary comparison cards, an interactive map area, clear disruption alerts and a journey status panel. Make the design visually impressive for a hackathon jury without sacrificing usability. Avoid excessive cards, unnecessary pages and clutter.
+
+### 2. Multilingual voice assistant
+Implement a prominent microphone button directly beside the main travel input. Support English and Telugu as primary languages, with a language selector and an extensible architecture for additional languages.
+
+- Accept spoken travel requests and convert speech into text.
+- Understand natural-language requests in the selected language.
+- Support Telugu speech and Telugu-English mixed-language requests where the available speech services permit.
+- Extract origin, destination, travel date, arrival deadline, budget, passenger count and preferences automatically.
+- Provide responses in the selected language and optional text-to-speech playback.
+- Allow users to edit recognized text before submitting it.
+- Show microphone permission, listening, processing and error states clearly.
+- Always provide a working text-input fallback.
+- Use browser speech capabilities where supported, and integrate a suitable speech service only when necessary. Never pretend unsupported languages work correctly.
+
+### 3. Minimal-step travel planning
+Keep the main workflow on a single screen. The user should describe their goal in one message or voice command. Automatically extract available information, ask only essential follow-up questions, and generate ranked itinerary recommendations without requiring long forms or repeated searches.
+
+Display the recommended route first, including estimated cost, departure and arrival, duration, transfers and uncertainty. Allow comparison of alternatives on the same screen.
+
+### 4. Agentic journey management
+Preserve the existing AI travel-planning and disruption-recovery features. When a delay, cancellation or missed connection occurs, reassess the existing journey, calculate the impact, recommend feasible alternatives and request approval before consequential external actions. Provide a working simulated demo when live integrations are unavailable.
+
+### 5. Implementation and verification
+Inspect the existing codebase before making changes. Reuse working components and avoid rebuilding the project from scratch. Implement functional controls, secure server-side API integrations, responsive layouts and graceful error handling. Keep API keys out of frontend code. Test voice input, language selection, text fallback, itinerary generation and disruption recovery.
+
+Deliver a complete working application, not just a visual mockup. Fix errors and explain which features work with real integrations and which depend on browser support, API configuration or simulated data.
