@@ -176,11 +176,11 @@ export default function Dashboard() {
     setMessages(prev => [...prev,{who:'traveler',text:raw}]);
     window.setTimeout(() => {
       const extracted = extractTripRequest(raw);
-      const newTrip = {...trip,origin:'',destination:'',...extracted,status:'Planning',selectedPlan:null,activeIssue:null,arrivalOffset:0,costOffset:0};
+      const newTrip = {...trip,...extracted,status:'Planning',selectedPlan:null,activeIssue:null,arrivalOffset:0,costOffset:0};
       setTrip(newTrip); setRequest(''); setBusy(false);
-      if (!extracted.origin || !extracted.destination) {
+      if (!newTrip.origin || !newTrip.destination) {
         setMessages(prev => [...prev,{who:'assistant',text:t('I have the request, but need both the starting city and destination before I can compare a route. Which cities should I use?','మీ అభ్యర్థన అర్థమైంది. మార్గాలను పోల్చడానికి బయలుదేరే నగరం, గమ్యస్థానం రెండూ కావాలి. ఏ నగరాలను ఉపయోగించాలి?')}]);
-        setFollowUpMode(!extracted.origin ? 'origin' : 'destination');
+        setFollowUpMode(!newTrip.origin ? 'origin' : 'destination');
         setFollowUp('');
       } else {
         setFollowUp(''); setFollowUpMode('');

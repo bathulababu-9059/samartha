@@ -1,0 +1,28 @@
+<section id="btc" style="font-family:system-ui,sans-serif;max-width:800px;margin:24px auto;padding:20px;background:#f2f6f7;border-radius:12px;color:#16262c">
+<h2 style="margin:0 0 12px">Bus or train?</h2>
+<select id="btc-route" style="width:100%;padding:10px;font:inherit;border-radius:8px;border:1px solid #ccd"></select>
+<div id="btc-out" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px"></div>
+<p id="btc-verdict" style="margin-top:14px"></p>
+<p style="font-size:.8rem;color:#5b6b70">Sample data. Replace with real timings.</p>
+<script>
+(function(){
+  // EDIT THIS DATA: minutes = travel time, fare in rupees, freq = departures per day
+  var ROUTES=[
+    {name:"Kakinada to Visakhapatnam",bus:{minutes:270,fare:320,freq:25},train:{minutes:255,fare:180,freq:4}},
+    {name:"Kakinada to Vijayawada",bus:{minutes:300,fare:400,freq:20},train:{minutes:330,fare:210,freq:3}},
+    {name:"Kakinada to Hyderabad",bus:{minutes:600,fare:900,freq:15},train:{minutes:690,fare:520,freq:2}}
+  ];
+  var sel=document.getElementById("btc-route"),out=document.getElementById("btc-out"),v=document.getElementById("btc-verdict");
+  ROUTES.forEach(function(r,i){sel.add(new Option(r.name,i));});
+  function hm(m){return Math.floor(m/60)+"h "+(m%60)+"m";}
+  function card(t,c,d){return '<div style="background:#fff;border-top:5px solid '+c+';border-radius:10px;padding:14px"><h3 style="margin:0 0 8px;color:'+c+'">'+t+'</h3><p>Time: <b>'+hm(d.minutes)+'</b></p><p>Fare: <b>&#8377;'+d.fare+'</b></p><p>Departures/day: <b>'+d.freq+'</b></p></div>';}
+  function render(){
+    var r=ROUTES[sel.value];
+    out.innerHTML=card("Bus","#c77d00",r.bus)+card("Train","#1a5fb4",r.train);
+    var dt=r.bus.minutes-r.train.minutes,df=r.bus.fare-r.train.fare;
+    v.textContent=(dt===0?"Same travel time. ":"The "+(dt>0?"train":"bus")+" is faster by "+hm(Math.abs(dt))+". ")+(df===0?"Same fare.":"The "+(df>0?"train":"bus")+" is cheaper by Rs "+Math.abs(df)+".");
+  }
+  sel.addEventListener("change",render);render();
+})();
+</script>
+</section>
